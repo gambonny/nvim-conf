@@ -13,7 +13,8 @@ vim.api.nvim_set_keymap("n", "<Leader>tz", ":Telescope current_buffer_fuzzy_find
 --- Buffers
 vim.api.nvim_set_keymap("n", "[b", ":BufferLineCycleNext <CR>", {})
 vim.api.nvim_set_keymap("n", "]b", ":BufferLineCyclePrev <CR>", {})
-vim.api.nvim_set_keymap("n", "<C-q>", "::Bdelete <CR>", {})
+vim.api.nvim_set_keymap("n", "<C-q>", ":Bdelete <CR>", {})
+vim.api.nvim_set_keymap("n", "<A-m>", ":WinShift <CR>", {})
 
 --- Git
 --- <leader>gy -> copies repo current line (gitlinker).  

@@ -15,6 +15,7 @@ return require('packer').startup(function(use)
 
   use({ "catppuccin/nvim", as = "catppuccin" })
   use "lukas-reineke/indent-blankline.nvim"
+  use "norcalli/nvim-colorizer.lua"
   
   use {
     "nvim-lualine/lualine.nvim",
@@ -47,6 +48,8 @@ return require('packer').startup(function(use)
   
   --- Buffers
   use 'famiu/bufdelete.nvim'
+  use "b0o/incline.nvim"
+  use 'sindrets/winshift.nvim'
   use {
     "akinsho/bufferline.nvim",
     tag = "*",

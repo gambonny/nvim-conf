@@ -8,6 +8,9 @@ require('telescope').setup()
 require('telescope').load_extension('fzf')
 require('leap').set_default_keymaps()
 require"gitlinker".setup()
+require'colorizer'.setup()
+require('incline').setup()
+require("winshift").setup()
 
 require'nvim-web-devicons'.setup {
  default = true;
