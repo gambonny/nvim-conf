@@ -30,3 +30,10 @@ vim.keymap.set('n', '<A-h>', require('smart-splits').move_cursor_left)
 vim.keymap.set('n', '<A-j>', require('smart-splits').move_cursor_down)
 vim.keymap.set('n', '<A-k>', require('smart-splits').move_cursor_up)
 vim.keymap.set('n', '<A-l>', require('smart-splits').move_cursor_right)
+
+-- Faster j-k keys
+vim.api.nvim_set_keymap('n', 'j', '<Plug>(accelerated_jk_gj)', {})
+vim.api.nvim_set_keymap('n', 'k', '<Plug>(accelerated_jk_gk)', {})
+vim.api.nvim_set_keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', {})
+
+

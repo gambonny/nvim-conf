@@ -4,7 +4,6 @@ require('keymaps')
 require('plugins')
 require('settings')
 
-
 require('telescope').setup()
 require('telescope').load_extension('fzf')
 require('leap').set_default_keymaps()
@@ -40,3 +39,7 @@ require('bufferline').setup {
     show_buffer_close_icons = false,
   }
 }
+
+local lsp = require('lsp-zero')
+lsp.preset('recommended')
+lsp.setup()
