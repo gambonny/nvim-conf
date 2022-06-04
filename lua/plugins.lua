@@ -5,55 +5,55 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 return require('packer').startup(function(use)
-  use "wbthomason/packer.nvim"
+  use 'wbthomason/packer.nvim'
   use 'kyazdani42/nvim-web-devicons'
   use 'lewis6991/impatient.nvim'
-  use "psliwka/vim-smoothie"
-  use "nvim-lua/plenary.nvim"
-  use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
+  use 'psliwka/vim-smoothie'
+  use 'nvim-lua/plenary.nvim'
+  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
-
-  use({ "catppuccin/nvim", as = "catppuccin" })
-  use "lukas-reineke/indent-blankline.nvim"
-  use "norcalli/nvim-colorizer.lua"
+  --- Colors
+  use({ 'catppuccin/nvim', as = 'catppuccin' })
+  use 'lukas-reineke/indent-blankline.nvim'
+  use 'norcalli/nvim-colorizer.lua'
   
   use {
-    "nvim-lualine/lualine.nvim",
+    'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
 
   --- Escape
-  use "rainbowhxch/accelerated-jk.nvim"
-  use "jdhao/better-escape.vim"
+  use 'rainbowhxch/accelerated-jk.nvim'
+  use 'jdhao/better-escape.vim'
 
-  use "tpope/vim-eunuch"
-  use "andymass/vim-matchup"
-  use "tpope/vim-unimpaired"
-  use "tpope/vim-repeat"
-  use "ggandor/leap.nvim"
-  use "farmergreg/vim-lastplace"
+  use 'tpope/vim-eunuch'
+  use 'andymass/vim-matchup'
+  use 'tpope/vim-unimpaired'
+  use 'tpope/vim-repeat'
+  use 'ggandor/leap.nvim'
+  use 'farmergreg/vim-lastplace'
 
   --- Editing
-  use "tpope/vim-surround"
-  use "cohama/lexima.vim"
+  use 'tpope/vim-surround'
+  use 'cohama/lexima.vim'
   
-  --- Quickfix enhancements
-  use {'kevinhwang91/nvim-bqf', ft = 'qf'}
+  --- Quickfix
+  use { 'kevinhwang91/nvim-bqf', ft = 'qf' }
   
   --- Git
   use {
     'ruifm/gitlinker.nvim',
-    requires = 'nvim-lua/plenary.nvim',
+    requires = 'nvim-lua/plenary.nvim'
   }
   
   --- Buffers
   use 'famiu/bufdelete.nvim'
-  use "b0o/incline.nvim"
+  use 'b0o/incline.nvim'
   use 'sindrets/winshift.nvim'
   use {
-    "akinsho/bufferline.nvim",
-    tag = "*",
-    requires = "kyazdani42/nvim-web-devicons"
+    'akinsho/bufferline.nvim',
+    tag = '*',
+    requires = 'kyazdani42/nvim-web-devicons'
   }
 
   --- FuzzyFinder
@@ -63,31 +63,31 @@ return require('packer').startup(function(use)
   }
   use {
     'nvim-telescope/telescope.nvim',
-    requires = { {'nvim-lua/plenary.nvim'} }
+    requires = {{ 'nvim-lua/plenary.nvim' }}
   }
 
   --- Splits
-  use('mrjones2014/smart-splits.nvim')
+  use 'mrjones2014/smart-splits.nvim'
   
   --- LSP
   use {
   'VonHeikemen/lsp-zero.nvim',
   requires = {
     -- LSP Support
-    {'neovim/nvim-lspconfig'},
-    {'williamboman/nvim-lsp-installer'},
+    'neovim/nvim-lspconfig',
+    'williamboman/nvim-lsp-installer',
 
     -- Autocompletion
-    {'hrsh7th/nvim-cmp'},
-    {'hrsh7th/cmp-buffer'},
-    {'hrsh7th/cmp-path'},
-    {'saadparwaiz1/cmp_luasnip'},
-    {'hrsh7th/cmp-nvim-lsp'},
-    {'hrsh7th/cmp-nvim-lua'},
+    'hrsh7th/nvim-cmp',
+    'hrsh7th/cmp-buffer',
+    'hrsh7th/cmp-path',
+    'saadparwaiz1/cmp_luasnip',
+    'hrsh7th/cmp-nvim-lsp',
+    'hrsh7th/cmp-nvim-lua',
 
     -- Snippets
-    {'L3MON4D3/LuaSnip'},
-    {'rafamadriz/friendly-snippets'},
+    'L3MON4D3/LuaSnip',
+    'rafamadriz/friendly-snippets'
   }
 }
   
