@@ -6,6 +6,7 @@ require('settings')
 require('telescope').setup()
 require('telescope').load_extension('fzf')
 require('leap').set_default_keymaps()
+require"gitlinker".setup()
 
 require'nvim-web-devicons'.setup {
  default = true;
@@ -37,4 +38,3 @@ require('bufferline').setup {
     show_buffer_close_icons = false,
   }
 }
-

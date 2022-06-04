@@ -12,11 +12,6 @@ return require('packer').startup(function(use)
   use "nvim-lua/plenary.nvim"
   use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
 
-  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
-  use {
-    'nvim-telescope/telescope.nvim',
-    requires = { {'nvim-lua/plenary.nvim'} }
-  }
 
   use({ "catppuccin/nvim", as = "catppuccin" })
   use "lukas-reineke/indent-blankline.nvim"
@@ -26,8 +21,9 @@ return require('packer').startup(function(use)
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
 
+  --- Escape
+  use "rainbowhxch/accelerated-jk.nvim"
   use "jdhao/better-escape.vim"
-  use { "akinsho/bufferline.nvim", tag = "*", requires = "kyazdani42/nvim-web-devicons" }
 
   use "tpope/vim-eunuch"
   use "andymass/vim-matchup"
@@ -36,11 +32,38 @@ return require('packer').startup(function(use)
   use "ggandor/leap.nvim"
   use "farmergreg/vim-lastplace"
 
+  --- Editing
   use "tpope/vim-surround"
   use "cohama/lexima.vim"
-  use "rainbowhxch/accelerated-jk.nvim"
+  
+  --- Quickfix enhancements
+  use {'kevinhwang91/nvim-bqf', ft = 'qf'}
+  
+  --- Git
+  use {
+    'ruifm/gitlinker.nvim',
+    requires = 'nvim-lua/plenary.nvim',
+  }
+  
+  --- Buffers
+  use 'famiu/bufdelete.nvim'
+  use {
+    "akinsho/bufferline.nvim",
+    tag = "*",
+    requires = "kyazdani42/nvim-web-devicons"
+  }
 
-   if packer_bootstrap then
+  --- FuzzyFinder
+  use {
+    'nvim-telescope/telescope-fzf-native.nvim',
+    run = 'make'
+  }
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = { {'nvim-lua/plenary.nvim'} }
+  }
+  
+  if packer_bootstrap then
     require('packer').sync()
    end
 end)
