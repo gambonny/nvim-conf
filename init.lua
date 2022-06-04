@@ -1,4 +1,6 @@
 require('impatient')
+require('autocmds')
+require('keymaps')
 require('plugins')
 require('settings')
 
