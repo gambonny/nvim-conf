@@ -36,4 +36,13 @@ vim.cmd[[
   let g:indent_blankline_show_current_context = v:true
   let g:vrc_trigger = '<C-y>'
   let g:better_escape_shortcut = 'jj'
+  hi link AerialClass Type
+  hi link AerialClassIcon Special
+  hi link AerialFunction Special
+  hi AerialFunctionIcon guifg=#cb4b16 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+  hi link AerialLine QuickFixLine
+  hi AerialLineNC guibg=Gray
+  hi link AerialGuide Comment
+  hi AerialGuide1 guifg=Red
+  hi AerialGuide2 guifg=Blue
 ]]
