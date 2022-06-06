@@ -13,6 +13,7 @@ require('telescope').setup {
 }
 require('telescope').load_extension('fzf')
 require('telescope').load_extension('aerial')
+require("telescope").load_extension('harpoon')
 
 require('leap').set_default_keymaps()
 require('gitlinker').setup()

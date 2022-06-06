@@ -6,10 +6,11 @@ vim.api.nvim_set_keymap("n", "<Leader>tg", ":Telescope grep_string<CR>", {})
 vim.api.nvim_set_keymap("n", "<Leader>tl", ":Telescope live_grep<CR>", {})
 vim.api.nvim_set_keymap("n", "<Leader>tc", ":Telescope git_commits<CR>", {})
 vim.api.nvim_set_keymap("n", "<Leader>td", ":Telescope git_bcommits<CR>", {})
-vim.api.nvim_set_keymap("n", "<Leader>th", ":Telescope git_branches<CR>", {})
+vim.api.nvim_set_keymap("n", "<Leader>tr", ":Telescope git_branches<CR>", {})
 vim.api.nvim_set_keymap("n", "<Leader>ts", ":Telescope git_status<CR>", {})
 vim.api.nvim_set_keymap("n", "<Leader>tz", ":Telescope current_buffer_fuzzy_find<CR>", {})
 vim.api.nvim_set_keymap("n", "<Leader>ta", ":Telescope aerial theme=get_ivy<CR>", {})
+vim.api.nvim_set_keymap("n", "<Leader>th", ":Telescope harpoon marks<CR>", {})
 
 --- Buffers
 vim.api.nvim_set_keymap("n", "[b", ":BufferLineCycleNext <CR>", {})
@@ -36,3 +37,8 @@ vim.keymap.set('n', '<A-l>', require('smart-splits').move_cursor_right)
 vim.api.nvim_set_keymap('n', 'j', '<Plug>(accelerated_jk_gj)', {})
 vim.api.nvim_set_keymap('n', 'k', '<Plug>(accelerated_jk_gk)', {})
 vim.api.nvim_set_keymap('n', 'rn', '<cmd>lua vim.lsp.buf.rename()<CR>', {})
+
+--- Harpoon
+vim.api.nvim_set_keymap('n', '<leader>ha', '<cmd>lua require("harpoon.mark").add_file()<CR>', {silent = true})
+vim.api.nvim_set_keymap('n', '<leader>hn', '<cmd>lua require("harpoon.ui").nav_next()<CR>', {silent = true})
+vim.api.nvim_set_keymap('n', '<leader>hp', '<cmd>lua require("harpoon.ui").nav_prev()<CR>', {silent = true})
