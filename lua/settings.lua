@@ -1,7 +1,6 @@
-vim.g.mapleader = " "
 vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
 
-vim.cmd[[
+vim.cmd [[
   colorscheme catppuccin
   set mouse=a
   set autoindent
@@ -46,3 +45,5 @@ vim.cmd[[
   hi AerialGuide1 guifg=Red
   hi AerialGuide2 guifg=Blue
 ]]
+
+vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]

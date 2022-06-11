@@ -1,10 +1,11 @@
 local fn = vim.fn
-local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 if fn.empty(fn.glob(install_path)) > 0 then
-  packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+  packer_bootstrap = fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
 end
 
 return require('packer').startup(function(use)
+
   use 'wbthomason/packer.nvim'
   use 'kyazdani42/nvim-web-devicons'
   use 'lewis6991/impatient.nvim'
@@ -16,7 +17,8 @@ return require('packer').startup(function(use)
   use({ 'catppuccin/nvim', as = 'catppuccin' })
   use 'lukas-reineke/indent-blankline.nvim'
   use 'norcalli/nvim-colorizer.lua'
-  
+  use 'RRethy/vim-illuminate'
+
   use {
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
@@ -36,16 +38,17 @@ return require('packer').startup(function(use)
   --- Editing
   use 'tpope/vim-surround'
   use 'cohama/lexima.vim'
-  
+
   --- Quickfix
   use { 'kevinhwang91/nvim-bqf', ft = 'qf' }
-  
+
   --- Git
+  use 'lewis6991/gitsigns.nvim'
   use {
     'ruifm/gitlinker.nvim',
     requires = 'nvim-lua/plenary.nvim'
   }
-  
+
   --- Buffers
   use 'famiu/bufdelete.nvim'
   use 'b0o/incline.nvim'
@@ -63,13 +66,14 @@ return require('packer').startup(function(use)
   }
   use {
     'nvim-telescope/telescope.nvim',
-    requires = {{ 'nvim-lua/plenary.nvim' }}
+    requires = { { 'nvim-lua/plenary.nvim' } }
   }
 
   --- Splits
   use 'mrjones2014/smart-splits.nvim'
-  
+
   --- LSP
+  use 'jose-elias-alvarez/null-ls.nvim'
   use {
     'VonHeikemen/lsp-zero.nvim',
     requires = {
@@ -93,8 +97,9 @@ return require('packer').startup(function(use)
 
   use 'stevearc/aerial.nvim'
   use 'ThePrimeagen/harpoon'
+  use 'junegunn/goyo.vim'
 
   if packer_bootstrap then
     require('packer').sync()
-   end
+  end
 end)

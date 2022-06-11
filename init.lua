@@ -1,6 +1,8 @@
+vim.g.mapleader = ";"
+
 require('impatient')
-require('autocmds')
 require('keymaps')
+require('autocmds')
 require('plugins')
 require('settings')
 
@@ -13,13 +15,14 @@ require('telescope').setup {
 }
 require('telescope').load_extension('fzf')
 require('telescope').load_extension('aerial')
-require("telescope").load_extension('harpoon')
+require('telescope').load_extension('harpoon')
 
 require('leap').set_default_keymaps()
 require('gitlinker').setup()
 require('colorizer').setup()
 require('incline').setup()
 require('winshift').setup()
+require('gitsigns').setup()
 
 require('nvim-web-devicons').setup {
   default = true,
@@ -27,7 +30,7 @@ require('nvim-web-devicons').setup {
 
 require('lualine').setup {
   sections = {
-    lualine_c={'aerial'},
+    lualine_c = { 'aerial' },
   },
   options = {
     theme = 'catppuccin',
@@ -70,9 +73,41 @@ require("aerial").setup({
 })
 
 local lsp = require('lsp-zero')
+local null_ls = require('null-ls')
+
+local null_opts = lsp.build_options('null-ls', {
+  on_attach = function(client)
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      desc = "Auto format before save",
+      pattern = "<buffer>",
+      callback = vim.lsp.buf.format,
+    })
+  end
+})
+
+-- set installed lsp
+lsp.ensure_installed({
+  "html",
+  "cssls",
+  "tsserver",
+  "eslint",
+  "sumenko_lua",
+})
+
+null_ls.setup({
+  on_attach = null_opts.on_attach,
+  sources = {
+    null_ls.builtins.formatting.prettier,
+    null_ls.builtins.diagnostics.eslint,
+  }
+})
+
 lsp.preset('recommended')
 lsp.setup()
 
-require("lspconfig").vimls.setup{
-  on_attach = require("aerial").on_attach,
+require("lspconfig").vimls.setup {
+  on_attach = function(client)
+    require("aerial").on_attach(client)
+    require 'illuminate'.on_attach(client)
+  end
 }

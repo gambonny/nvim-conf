@@ -1,6 +1,6 @@
 --- Telescope
-vim.api.nvim_set_keymap("n", "<C-p>", ":Telescope find_files<CR>", {})
 vim.api.nvim_set_keymap("n", "<Leader>tb", ":Telescope buffers theme=dropdown<CR>", {})
+vim.api.nvim_set_keymap("n", "<C-p>", ":Telescope find_files<CR>", {})
 vim.api.nvim_set_keymap("n", "<Leader>tm", ":Telescope marks<CR>", {})
 vim.api.nvim_set_keymap("n", "<Leader>tg", ":Telescope grep_string<CR>", {})
 vim.api.nvim_set_keymap("n", "<Leader>tl", ":Telescope live_grep<CR>", {})
@@ -42,3 +42,10 @@ vim.api.nvim_set_keymap('n', 'rn', '<cmd>lua vim.lsp.buf.rename()<CR>', {})
 vim.api.nvim_set_keymap('n', '<leader>ha', '<cmd>lua require("harpoon.mark").add_file()<CR>', {silent = true})
 vim.api.nvim_set_keymap('n', '<leader>hn', '<cmd>lua require("harpoon.ui").nav_next()<CR>', {silent = true})
 vim.api.nvim_set_keymap('n', '<leader>hp', '<cmd>lua require("harpoon.ui").nav_prev()<CR>', {silent = true})
+
+-- Lsp
+vim.api.nvim_set_keymap('n', '<Leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', {})
+
+-- Goyo
+
+vim.api.nvim_set_keymap('n', '<leader>go', '<cmd>Goyo<CR>', {silent = true})
