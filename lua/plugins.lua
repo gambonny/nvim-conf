@@ -18,6 +18,7 @@ return require('packer').startup(function(use)
   use 'lukas-reineke/indent-blankline.nvim'
   use 'norcalli/nvim-colorizer.lua'
   use 'RRethy/vim-illuminate'
+  use 'chentoast/marks.nvim'
 
   use {
     'nvim-lualine/lualine.nvim',
@@ -38,9 +39,11 @@ return require('packer').startup(function(use)
   --- Editing
   use 'tpope/vim-surround'
   use 'cohama/lexima.vim'
-
-  --- Quickfix
-  use { 'kevinhwang91/nvim-bqf', ft = 'qf' }
+  use 'mattn/emmet-vim'
+  use { 'junegunn/fzf', run = function()
+    vim.fn['fzf#install']()
+  end
+  }
 
   --- Git
   use 'lewis6991/gitsigns.nvim'
@@ -71,6 +74,7 @@ return require('packer').startup(function(use)
 
   --- Splits
   use 'mrjones2014/smart-splits.nvim'
+  use 'dhruvasagar/vim-zoom'
 
   --- LSP
   use 'jose-elias-alvarez/null-ls.nvim'

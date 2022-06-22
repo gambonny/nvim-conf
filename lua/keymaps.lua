@@ -19,8 +19,8 @@ vim.api.nvim_set_keymap("n", "<C-q>", ":Bdelete <CR>", {})
 vim.api.nvim_set_keymap("n", "<A-m>", ":WinShift <CR>", {})
 
 --- Git
---- <leader>gy -> copies repo current line (gitlinker).  
-vim.api.nvim_set_keymap('n', '<leader>gY', '<cmd>lua require"gitlinker".get_repo_url()<cr>', {silent = true})
+--- <leader>gy -> copies repo current line (gitlinker).
+vim.api.nvim_set_keymap('n', '<leader>gY', '<cmd>lua require"gitlinker".get_repo_url()<cr>', { silent = true })
 
 --- Splits
 vim.keymap.set('n', '<A-y>', require('smart-splits').resize_left)
@@ -39,13 +39,12 @@ vim.api.nvim_set_keymap('n', 'k', '<Plug>(accelerated_jk_gk)', {})
 vim.api.nvim_set_keymap('n', 'rn', '<cmd>lua vim.lsp.buf.rename()<CR>', {})
 
 --- Harpoon
-vim.api.nvim_set_keymap('n', '<leader>ha', '<cmd>lua require("harpoon.mark").add_file()<CR>', {silent = true})
-vim.api.nvim_set_keymap('n', '<leader>hn', '<cmd>lua require("harpoon.ui").nav_next()<CR>', {silent = true})
-vim.api.nvim_set_keymap('n', '<leader>hp', '<cmd>lua require("harpoon.ui").nav_prev()<CR>', {silent = true})
+vim.api.nvim_set_keymap('n', '<leader>ha', '<cmd>lua require("harpoon.mark").add_file()<CR>', { silent = true })
+vim.api.nvim_set_keymap('n', '<leader>hn', '<cmd>lua require("harpoon.ui").nav_next()<CR>', { silent = true })
+vim.api.nvim_set_keymap('n', '<leader>hp', '<cmd>lua require("harpoon.ui").nav_prev()<CR>', { silent = true })
 
 -- Lsp
 vim.api.nvim_set_keymap('n', '<Leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', {})
 
 -- Goyo
-
-vim.api.nvim_set_keymap('n', '<leader>go', '<cmd>Goyo<CR>', {silent = true})
+vim.api.nvim_set_keymap('n', '<leader>go', '<cmd>Goyo<CR>', { silent = true })

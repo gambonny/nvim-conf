@@ -23,6 +23,7 @@ require('colorizer').setup()
 require('incline').setup()
 require('winshift').setup()
 require('gitsigns').setup()
+require('marks').setup()
 
 require('nvim-web-devicons').setup {
   default = true,
@@ -80,7 +81,7 @@ local null_opts = lsp.build_options('null-ls', {
     vim.api.nvim_create_autocmd("BufWritePre", {
       desc = "Auto format before save",
       pattern = "<buffer>",
-      callback = vim.lsp.buf.format,
+      callback = vim.lsp.buf.format
     })
   end
 })
